@@ -1,8 +1,13 @@
 import React from 'react'
 
+import Pixel from './Pixel'
+
 const App = () => {
   return (
-    <div>React development has begun!</div>
+    <>
+      {new Array(500).fill(<Pixel />)}
+    </>
+    
   )
 }
 
