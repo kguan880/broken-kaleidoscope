@@ -7,8 +7,8 @@
   "author": "EDA",
   "license": "ISC",
   "scripts": {
-    "start": "webpack && node server",
-    "dev": "node server & webpack --watch",
+    "start": "webpack --watch",
+    "dev": "node server",
     "test": "jest --watchAll"
   },
   "babel": {
