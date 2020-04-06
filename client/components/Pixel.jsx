@@ -6,7 +6,7 @@ class Pixel extends React.Component {
         this.state = {
             height: '40px',
             width: '40px',
-            backgroundColor: 'red'
+            backgroundColor: `#${Math.floor(Math.random() * 0x1000000).toString(16).padStart(6, 0)}`
         }
     }
 
