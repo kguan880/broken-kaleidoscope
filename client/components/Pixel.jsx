@@ -34,9 +34,16 @@ class Pixel extends React.Component {
         })
     }
 
+    rightClickHandler = evt => {
+        evt.preventDefault()
+        this.setState({
+            backgroundColor: 'black'
+        })
+    }
+
     render() {
         return (
-            <div onDragEnter={this.onDrag} onDoubleClick={this.onDblClick} onMouseEnter={this.onEnter} onClick={this.clickHandler} style={this.state}></div>
+            <div onContextMenu={this.rightClickHandler} onDragEnter={this.onDrag} onDoubleClick={this.onDblClick} onMouseEnter={this.onEnter} onClick={this.clickHandler} style={this.state}></div>
         )
     }
 }
