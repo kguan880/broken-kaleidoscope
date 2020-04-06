@@ -4,8 +4,8 @@ class Pixel extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            height: '40px',
-            width: '40px',
+            height: '20px',
+            width: '20px',
             backgroundColor: `#${Math.floor(Math.random() * 0x1000000).toString(16).padStart(6, 0)}`
         }
     }
