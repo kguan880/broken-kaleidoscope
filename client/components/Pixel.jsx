@@ -10,15 +10,21 @@ class Pixel extends React.Component {
         }
     }
 
-    clickHandler= evt => {
+    clickHandler = evt => {
         this.setState({
             backgroundColor: `#${Math.floor(Math.random() * 0x1000000).toString(16).padStart(6, 0)}`
         })
     }
 
+    onEnter = evt => {
+        this.setState({
+            backgroundColor: 'green'
+        })
+    }
+
     render() {
         return (
-            <div onClick={this.clickHandler} style={this.state}></div>
+            <div onMouseEnter={this.onEnter} onClick={this.clickHandler} style={this.state}></div>
         )
     }
 }
