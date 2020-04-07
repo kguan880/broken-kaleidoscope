@@ -13,7 +13,7 @@ class Pixel extends React.Component {
         }
     }
 
-    clickHandler = evt => {
+    leftClickHandler = evt => {
         this.setState({
           // ... update style here ...
             style: {
@@ -24,9 +24,59 @@ class Pixel extends React.Component {
         })
     }
 
+    hoverHandler = evt => {
+        this.setState({
+          // ... update style here ...
+            style: {
+                height: '50px',
+                width: '50px',
+                backgroundColor: 'green'
+            }
+        })
+    }
+
+    rightClickHandler = evt => {
+        this.setState({
+          // ... update style here ...
+            style: {
+                height: '50px',
+                width: '50px',
+                backgroundColor: 'black'
+            }
+        })
+    }
+
+    doubleClickHandler = evt => {
+        this.setState({
+          // ... update style here ...
+            style: {
+                height: '50px',
+                width: '50px',
+                backgroundColor: 'white'
+            }
+        })
+    }
+
+    clickDragHandler = evt => {
+        this.setState({
+          // ... update style here ...
+            style: {
+                height: '50px',
+                width: '50px',
+                backgroundColor: 'yellow'
+            }
+        })
+    }
+
     render() {
         return (
-            <div onClick={this.clickHandler} style={this.state.style}>
+            <div 
+                onDragEnter={this.clickDragHandler} 
+                onDoubleClick={this.doubleClickHandler} 
+                onContextMenu={this.rightClickHandler} 
+                onMouseEnter={this.hoverHandler} 
+                onClick={this.leftClickHandler} 
+                style={this.state.style}>
             </div>
         )
     }
