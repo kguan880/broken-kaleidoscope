@@ -22,8 +22,7 @@ npm run dev
 Visit [http://localhost:3000](http://localhost:3000) in your browser. You'll see 'React development has begun!', just to confirm everything is working.
 
 
-## Little steps: get something working
-
+>
 Create a component that only has one job: return a `<div>` using JSX.
 
 Leave the `<div>` empty. You won't be able to see it, but you'll be able to check if it has been rendered using the inspect feature of your browser's development tools. You can call the component whatever you like. We like `<Pixel />` because it evokes the idea of a small colourful square, and that's what we're going to be working with: lots of colourful squares!
