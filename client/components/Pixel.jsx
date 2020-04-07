@@ -1,30 +1,46 @@
 import React from 'react'
 
+const randomHexColour = () => `#${Math.floor(Math.random() * 0x1400000).toString(16).padStart(6, 0)}`
+
+
 class Pixel extends React.Component {
-    // const randomHexColour = 
-    
-    state = {
+
+        state = {
         style: {
-            height: '20px',
-            width: '20px',
-            backgroundColor:  `#${Math.floor(Math.random() * 0x1000000).toString(16).padStart(6, 0)}`
+            height: '35px',
+            width: '35px',
+            backgroundColor: randomHexColour ()
             }
     }
+
+componentDidMount() {
+
+        console.log('hello')
+        setInterval(() => {
+          this.setState({
+              style: {
+                  height: '35px',
+                  width: '35px',
+                  backgroundColor: randomHexColour()
+                  }
+              })
+          }, 2000);
+}
 
     clickHandler = evt => {
         this.setState({
           style: {
-            height: '20px',
-            width: '20px',
-            backgroundColor: `#${Math.floor(Math.random() * 0x1000000).toString(16).padStart(6, 0)}`
+            height: '35px',
+            width: '35px',
+            backgroundColor: randomHexColour()
             }
         })
       }
       hoverHandler = evt => {
         this.setState({
           style: {
-            height: '20px',
-            width: '20px',
+            height: '35px',
+            width: '35px',
             backgroundColor: 'green' 
             }
         })
@@ -32,8 +48,8 @@ class Pixel extends React.Component {
       dragHandler = evt => {
         this.setState({
           style: {
-            height: '20px',
-            width: '20px',
+            height: '35px',
+            width: '35px',
             backgroundColor: `yellow` 
             }
         })
@@ -41,8 +57,8 @@ class Pixel extends React.Component {
       dblClickHandler = evt => {
         this.setState({
           style: {
-            height: '20px',
-            width: '20px',
+            height: '35px',
+            width: '35px',
             backgroundColor: `white` 
             }
         })
@@ -50,12 +66,14 @@ class Pixel extends React.Component {
       rightClickHandler = evt => {
         this.setState({
           style: {
-            height: '20px',
-            width: '20px',
+            height: '35px',
+            width: '35px',
             backgroundColor: `black` 
             }
         })
       }
+
+
 
     render() {
         return(
@@ -65,10 +83,11 @@ class Pixel extends React.Component {
             onDoubleClick={this.dblClickHandler}
             onMouseEnter={this.hoverHandler}
             onDragEnter={this.dragHandler}
-             style={this.state.style}>
+            style={this.state.style}>
             </div>
         )
     }
 }
+
 
 export default Pixel
