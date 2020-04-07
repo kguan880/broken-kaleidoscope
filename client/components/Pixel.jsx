@@ -5,10 +5,10 @@ class Pixel extends React.Component {
         super(props)
         this.state = {
             style: {
-                height: '30px',
-                width: '30px',
-                backgroundColor: 'cornflowerblue',
-            }
+                height: '5px',
+                width: '5px',
+                backgroundColor: `#${Math.floor(Math.random() * 0x1000000).toString(16).padStart(6, 0)}`,
+            } 
         }
       
     }
