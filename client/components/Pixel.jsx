@@ -8,7 +8,7 @@ class Pixel extends React.Component {
             style: {
                 height: '50px',
                 width: '50px',
-                backgroundColor: 'cornflowerblue'
+                backgroundColor: randomHexColor()
             }
         }
     }
@@ -20,7 +20,8 @@ class Pixel extends React.Component {
         )
     }
 }
-    
 
+const randomHexColor = () =>
+  `#${Math.floor(Math.random() * 0x1000000).toString(16).padStart(6, 0)}`
 
 export default Pixel
