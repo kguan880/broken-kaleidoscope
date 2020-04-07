@@ -4,9 +4,10 @@ import Pixels from "./Pixels";
 
 function App(){
   return(
-    Array.from({length: 100}, (v,i)=>{
+    Array.from({length: 250}, (v,i)=>{
       return <Pixels key={i}/>
-    }) 
+    })
   )
 }
+
 export default App;

@@ -15,31 +15,65 @@ class Pixels extends React.Component{
         backgroundColor: this.randomHexColor()
       },
     }
+    this.timer()
   }
   
-  mouseOver = (event) =>{
+  mouseEnter = () =>{
     this.setState({
       style:{
-        height: "100px",
-        width: "100px",
-        backgroundColor: this.randomHexColor()
+        height: "50px",
+        width: "50px",
+        backgroundColor: 'green',
       }
     })
   }
 
-  mouseOut = (event) =>{
+  contextMenu = () =>{
     this.setState({
-      style: {
+      style:{
         height: "50px",
         width: "50px",
-        backgroundColor: this.randomHexColor()
-      },
+        backgroundColor: 'black',
+      }
     })
   }
 
+  dblClick = () =>{
+    this.setState({
+      style:{
+        height: "50px",
+        width: "50px",
+        backgroundColor: 'white',
+      }
+    })
+  }
+
+  dragEnter = () =>{
+    this.setState({
+      style:{
+        height: "50px",
+        width: "50px",
+        backgroundColor: 'yellow',
+      }
+    })
+  }
+
+  timer = () =>{
+    setInterval(()=>{
+      this.setState({
+        style:{
+          height: "50px",
+          width: "50px",
+          backgroundColor: this.randomHexColor()
+        }
+      })
+    },1000)
+  }
+
   render(){
+    //this.timer()
     return (
-      <div onMouseOver={this.mouseOver} onMouseOut={this.mouseOut} style={this.state.style}>
+      <div onMouseEnter={this.mouseEnter} onContextMenu={this.contextMenu} onDoubleClick={this.dblClick} onDragEnter={this.dragEnter} style={this.state.style}>
       </div>
     )
   }
