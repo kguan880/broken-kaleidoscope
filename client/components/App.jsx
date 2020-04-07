@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
 
-const App = () => {
-  return (
-    <div>React development has begun!</div>
+import Pixels from "./Pixels";
+
+function App(){
+  return(
+    Array.from({length: 100}, (v,i)=>{
+      return <Pixels key={i}/>
+    }) 
   )
 }
-
-export default App
+export default App;
