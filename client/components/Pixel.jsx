@@ -2,16 +2,12 @@ import React from 'react'
 
 
 class Pixel extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            style: {
-                height: '30px',
-                width: '30px',
-                backgroundColor: 'red',
-            }
+    state = {
+        style: {
+            height: '30px',
+            width: '30px',
+            backgroundColor: 'red',
         }
-        this.timer()
     }
     
 
@@ -22,7 +18,7 @@ class Pixel extends React.Component {
             style: {
                 height: '30px',
                 width: '30px',
-                backgroundColor: randomHexColor
+                backgroundColor: randomHexColor()
             }
         })
     }
@@ -83,9 +79,8 @@ class Pixel extends React.Component {
     }
 
     render() {
-        // return <div style={this.state.style} onClick={this.randomColor} onMouseEnter={this.turnGreen} onContextMenu={this.turnBlack} onDoubleClick={this.turnWhite} onDragEnter={this.turnYellow}></div>
-
-        return <div style={this.state.style}></div>
+        return <div style={this.state.style} onClick={this.randomColor} onMouseEnter={this.turnGreen} onContextMenu={this.turnBlack} onDoubleClick={this.turnWhite} onDragEnter={this.turnYellow}></div>
+        // return <div style={this.state.style} onMouseEnter={this.timer} onMouseLeave={this.state.turnYellow}></div>
     }
 }
 
