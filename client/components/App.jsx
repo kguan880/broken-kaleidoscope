@@ -1,9 +1,15 @@
 import React from 'react'
 
-const App = () => {
-  return (
-    <div>React development has begun!</div>
-  )
+import Pixel from './Pixel'
+
+class App extends React.Component {
+
+  render(){
+    return (
+      Array(1000).fill('-').map( (item, index) => <Pixel key={index} />)
+    )
+  }
+  
 }
 
 export default App
