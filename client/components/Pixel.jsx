@@ -22,11 +22,57 @@ class Pixel extends React.Component {
             }
         })
       }
- 
+      
+    mouseEnterHandler = () => {
+        this.setState({
+            style: {
+                width: '15px',
+                height: '15px',
+                backgroundColor: 'red'
+            }
+        })
+    }
+
+    contextMenuHandler = (event) => {
+        event.preventDefault()
+        this.setState({
+            style: {
+                width: '15px',
+                height: '15px',
+                backgroundColor: 'black'
+            }
+        })
+    }
+
+    doubleClickHandler = (event) => {
+        this.setState({
+            style: {
+                width: '15px',
+                height: '15px',
+                backgroundColor: 'white'
+            }
+        })
+    }
+
+    dragEnterHandler = (event) => {
+        this.setState({
+            style: {
+                width: '15px',
+                height: '15px',
+                backgroundColor: 'green'
+            }
+        })
+    }
 
     render() {
         return (
-            <div style={this.state.style} onClick={this.clickHandler}></div>
+            <div style={this.state.style} 
+            onClick={this.clickHandler}
+            onMouseEnter={this.mouseEnterHandler}
+            onContextMenu={this.contextMenuHandler}
+            onDoubleClick={this.doubleClickHandler}
+            onDragEnter={this.dragEnterHandler}
+            ></div>
         )
     }
     
