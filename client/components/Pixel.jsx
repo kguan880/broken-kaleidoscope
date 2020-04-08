@@ -5,16 +5,28 @@ class Pixel extends React.Component {
         super(props)
         this.state = {
             style: {
-                height: '5px',
-                width: '5px',
-                backgroundColor: `#${Math.floor(Math.random() * 0x1000000).toString(16).padStart(6, 0)}`,
+                height: '15px',
+                width: '15px',
+                backgroundColor: `#${Math.floor(Math.random() * 0x1000000).toString(16).padStart(6, 0)}`
             } 
         }
       
     }
+
+    clickHandler = (event) => {
+        this.setState ({
+          style: {
+            height: '15px',
+            width: '15px',
+            backgroundColor: `#${Math.floor(Math.random() * 0x1000000).toString(16).padStart(6, 0)}` 
+            }
+        })
+      }
+ 
+
     render() {
         return (
-            <div style={this.state.style}></div>
+            <div style={this.state.style} onClick={this.clickHandler}></div>
         )
     }
     
